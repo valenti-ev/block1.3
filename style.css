@@ -14,12 +14,33 @@
 }
 
 body {
-  margin: 0 auto;
   min-width: 320px;
+  margin: 0 auto;
   background-color: #f8f8f8;
 }
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+.nav__logo {
+  display: flex;
+}
+.nav__icons-left div img:nth-child(1) {
+  display: none;
+  margin-right: 18px;
+}
 header {
-  min-width: 320px;
   height: 88px;
   background-color: #ffffff;
 }
@@ -31,32 +52,30 @@ nav {
   height: 100%;
 }
 .nav__button {
-  border: none;
-  padding: 0;
   background-color: transparent;
   cursor: pointer;
   width: 40px;
   height: 40px;
-  margin: 0;
-}
-.nav__button {
-  margin-right: 16px;
 }
 
 .nav__icons-left {
   display: flex;
   align-items: center;
 }
+.nav__icons-right {
+  display: flex;
+}
+.nav__icons-right li:nth-child(4) .nav__button {
+  margin-left: 16px;
+}
 .nav__button:nth-child(5) {
   margin-left: 20px;
 }
-.main__highlight {
+.title__highlight {
   display: flex;
 }
 
-.main__service {
-  min-width: 288px;
-  /*height: 40px;*/
+.title__service {
   font-family: "TT Lakes Bold", sans-serif;
   color: #1b1c21;
   font-size: 28px;
@@ -65,8 +84,12 @@ nav {
   line-height: 40px;
   letter-spacing: -0.6px;
 }
-.main__line {
-  width: 4px;
+
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 .carousel__a {
   min-width: 246px;
@@ -92,7 +115,6 @@ nav {
   border-radius: 6px;
   border: 2px solid #b8ffec;
   background: #fff;
-  margin-left: 16px;
 }
 .carousel {
   overflow: scroll;
@@ -101,8 +123,11 @@ nav {
   display: none;
 }
 
-.information__link {
+.information__button {
   display: flex;
+  margin-bottom: 10px;
+}
+.information__next {
   color: #1b1c21;
   font-family: "TT Lakes Medium";
   font-size: 16px;
@@ -110,13 +135,9 @@ nav {
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -0.2px;
-  margin-bottom: 10px;
 }
-.information__text,
-.information__2text,
-.information__3text {
+.information__text {
   min-width: 288px;
-  /*margin: 0 16px 20px 16px;*/
   color: #1b1c21;
   font-family: "TT Lakes Light", sans-serif;
   font-size: 14px;
@@ -134,42 +155,39 @@ nav {
   object-fit: contain;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
-  header {
-    min-width: 320px;
-  }
-  .main__button {
+@media (max-width: 767px) {
+  .title__list {
     display: none;
   }
-  .main__service {
+  .title__service {
     margin: 24px 12px 24px 12px;
   }
-  .main__line {
-    width: 4px;
-    height: 40px;
+  .title__wraper img {
     margin: 24px 0 24px 0;
   }
-  .nav__icons-right .nav__button:nth-child(1),
-  .nav__icons-right .nav__button:nth-child(2),
-  .nav__icons-right .nav__button:nth-child(3) {
+  .nav__icons-right li:nth-child(1),
+  .nav__icons-right li:nth-child(2),
+  .nav__icons-right li:nth-child(3) {
     display: none;
   }
-  .nav__button:first-child {
+  .nav__button {
+    margin-right: 16px;
+  }
+  .nav__icons-left {
     margin-left: 16px;
   }
+
   .nav__button__text {
     display: none;
   }
   .carousel__a {
     margin-bottom: 24px;
+    margin-left: 16px;
   }
   .information__block {
     margin: 0 16px 16px 16px;
   }
-  .information__2text,
-  .information__3text {
-    display: none;
-  }
+
   .information__foto {
     width: 100%;
   }
@@ -178,26 +196,38 @@ nav {
   header {
     min-width: 768px;
   }
-  .main__button {
+  .nav__icons-left div img:nth-child(1) {
+    display: block;
+  }
+  .title__list {
     display: none;
   }
-  .main__service {
-    margin: 24px 512px 32px 20px;
+  .title__service {
+    margin: 24px 0 32px 24px;
   }
-  .main__line {
+  .title__highlight img {
     margin: 24px 0 32px 0;
   }
-  .information__3text {
-    display: none;
-  }
-  .nav__button:first-child {
-    margin-left: 24px;
+
+  /*li.nav__button {*/
+  /*  margin-left: 24px;*/
+  /*  margin-right: 20px;*/
+  /*}*/
+  .nav__button {
+    margin-right: 16px;
   }
   .nav__button__text {
     display: none;
   }
+  .nav__icons-left {
+    margin-left: 24px;
+  }
+  .nav__icons-right {
+    display: flex;
+  }
   .carousel__a {
     margin-bottom: 32px;
+    margin-left: 24px;
   }
 
   .information {
@@ -214,27 +244,23 @@ nav {
 }
 
 @media (min-width: 1120px) {
-  body {
-    /*min-width: 1120px;*/
-  }
   header {
     min-width: 1120px;
     display: none;
   }
-  .main__wraper {
+  .title {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .main__list {
-    height: 40px;
-    margin-top: 50px;
-    display: flex;
-    gap: 32px;
-    padding: 0;
+  ul {
     margin: 0;
+    padding: 0;
+    display: flex;
+    height: 40px;
   }
-  .main__icon {
+
+  .title__icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -245,16 +271,16 @@ nav {
     cursor: pointer;
     white-space: nowrap;
   }
-  .main__icon:last-child {
+  .title__icon:last-child {
     margin-right: 32px;
   }
 
-  .main__image {
+  .title__image {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .main__text {
+  .title__text {
     display: flex;
     font-family: "TT Lakes Light";
     font-size: 16px;
@@ -262,18 +288,19 @@ nav {
     letter-spacing: -0.2px;
     align-items: center;
   }
-  .main__highlight {
+  .title__highlight {
     align-items: center;
   }
-  .main__button {
+  .title__list {
+    display: flex;
     margin-top: 50px;
     margin-bottom: 27px;
   }
 
-  .main__service {
+  .title__service {
     margin: 42px 0 9px 30px;
   }
-  .main__line {
+  .title__highlight img {
     margin: 42px 0 9px 0;
   }
   .nav__icons-right .nav__button:nth-child(1),
@@ -293,9 +320,6 @@ nav {
     margin: 0 36px 12px 34px;
     min-width: 490px;
   }
-  .information__2text {
-    display: none;
-  }
 
   .information__foto {
     border-radius: 5px;
@@ -306,5 +330,6 @@ nav {
   .carousel {
     flex-wrap: wrap;
     justify-content: normal;
+    margin-left: 32px;
   }
 }

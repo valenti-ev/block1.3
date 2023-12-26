@@ -13,71 +13,74 @@
           <button class="nav__button">
             <img src="image/burger.svg" alt="Три горизонтальные полоски" />
           </button>
-          <img src="image/Group.svg" alt="Логотип" />
+          <div class="nav__logo">
+            <img src="image/divider.svg" alt="Вертикальная черта" />
+            <img src="image/Group.svg" alt="Логотип" />
+          </div>
         </div>
 
-        <div class="nav__icons-right">
-          <button class="nav__button">
-            <img src="image/call.svg" alt="Телефонная трубка" />
-          </button>
-          <button class="nav__button">
-            <img src="image/chat.svg" alt="Сообщение" />
-          </button>
-          <button class="nav__button">
-            <img src="image/profile.svg" alt="Личный кабинет" />
-          </button>
-          <img src="image/divider.svg" alt="Вертикальная черта" />
-          <button class="nav__button">
-            <img src="image/repair.svg" alt="Гаечный ключ" />
-          </button>
-          <button class="nav__button">
-            <img src="image/checkstatus.svg" alt="Поиск" />
-          </button>
-        </div>
+        <ul class="nav__icons-right">
+          <li>
+            <button class="nav__button">
+              <img src="image/call.svg" alt="Телефонная трубка" />
+            </button>
+          </li>
+          <li>
+            <button class="nav__button">
+              <img src="image/chat.svg" alt="Сообщение" />
+            </button>
+          </li>
+          <li>
+            <button class="nav__button">
+              <img src="image/profile.svg" alt="Личный кабинет" />
+            </button>
+          </li>
+          <li>
+            <img src="image/divider.svg" alt="Вертикальная черта" />
+            <button class="nav__button">
+              <img src="image/repair.svg" alt="Гаечный ключ" />
+            </button>
+          </li>
+          <li>
+            <button class="nav__button">
+              <img src="image/checkstatus.svg" alt="Поиск" />
+            </button>
+          </li>
+        </ul>
       </nav>
     </header>
     <main>
-      <section class="main__wraper">
-        <div class="main__highlight">
-          <img
-            class="main__line"
-            src="image/highlight.svg"
-            alt="Вертикальная черта"
-          />
-          <h1 class="main__service">Услуги и сервисы</h1>
+      <section class="title">
+        <div class="title__highlight">
+          <img src="image/highlight.svg" alt="Вертикальная черта" />
+          <h1 class="title__service">Услуги и сервисы</h1>
         </div>
-        <div class="main__button">
-          <ul class="main__list">
-            <!--            <li class="main__item">-->
-            <li>
-              <button class="main__icon">
-                <span class="main__text">Оставить заявку</span>
-                <img
-                  class="main__image"
-                  src="image/repair.svg"
-                  alt="Гаечный ключ"
-                />
-              </button>
-            </li>
 
-            <!--            </li>-->
+        <ul class="title__list">
+          <li>
+            <button class="title__icon">
+              <span class="title__text">Оставить заявку</span>
+              <img
+                class="title__image"
+                src="image/repair.svg"
+                alt="Гаечный ключ"
+              />
+            </button>
+          </li>
 
-            <!--            <li class="main__item">-->
-            <li>
-              <button class="main__icon">
-                <span class="main__text">Статус ремонта</span>
-                <img
-                  class="main__image"
-                  src="image/checkstatus.svg"
-                  alt="Поиск"
-                />
-              </button>
-            </li>
-            <!--            </li>-->
-          </ul>
-        </div>
+          <li>
+            <button class="title__icon">
+              <span class="title__text">Статус ремонта</span>
+              <img
+                class="title__image"
+                src="image/checkstatus.svg"
+                alt="Поиск"
+              />
+            </button>
+          </li>
+        </ul>
       </section>
-      <nav class="carousel">
+      <section class="carousel">
         <a class="carousel__a">Ремонтируемые устройства</a>
         <a class="carousel__a">Ремонтируемые бренды</a>
         <a class="carousel__a">Дополнительные услуги</a>
@@ -85,7 +88,7 @@
         <a class="carousel__a">Адреса сервисных центров</a>
         <a class="carousel__a">Специальные цены</a>
         <a class="carousel__a">Отзывы</a>
-      </nav>
+      </section>
 
       <section class="information">
         <div class="information__block">
@@ -94,19 +97,17 @@
             Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
             официальной гарантией производителя.
           </p>
-          <p class="information__2text">
-            Мы успешно работаем с 1992 года и заслужили репутацию надежного
-            партнера
-          </p>
-          <p class="information__3text">
+          <p class="information__text">
             Мы успешно работаем с 1992 года и заслужили репутацию надежного
             партнера, что подтверждает большое количество постоянных клиентов.
             Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
             очередь, советуют нас родным и близким.
           </p>
-          <div class="information__link">
+          <div class="information__button">
             <img src="image/expand.svg" alt="Стрелка вниз" />
-            <a> Читать далее </a>
+            <button class="information__next">
+              <span> Читать далее </span>
+            </button>
           </div>
         </div>
         <img
