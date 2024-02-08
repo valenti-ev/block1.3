@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "TT Lakes Bold";
+  src: url(./fonts/TTLakes-Bold.woff);
+}
+
+@font-face {
+  font-family: "TT Lakes Light";
+  src: url(./fonts/TTLakes-Light.woff);
+}
+
+@font-face {
+  font-family: "TT Lakes Medium";
+  src: url(./fonts/TTLakes-Medium.woff);
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+button {
+  background-color: transparent;
+  border: none;
+}
+h1 {
+  font-family: "TT Lakes Light";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  padding-top: 16px;
+  padding-left: 16px;
+  margin: 0;
+  min-width: 320px;
+  min-height: 80px;
+  background: linear-gradient(to right, #f8f8f8, #ffffff);
+  text-align: start;
+}
+.title {
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.swiper-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 0;
+  height: 170px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  width: 224px !important;
+  min-width: 0;
+  height: 72px;
+  background-color: #ffffff;
+  padding: 10px;
+  column-gap: 10px;
+  margin-right: 5 !important;
+}
+
+.swiper-wrapper:first-child {
+  margin-left: 20px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #b5b6bc;
+}
+.swiper-pagination-bullet {
+  background-color: #dddddd;
+  width: 12px;
+  height: 12px;
+  line-height: 20px;
+}
+.brand-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  transform: none !important;
+}
+
+.brand-big-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  transform: none !important;
+}
+
+.overflow-block {
+  overflow: hidden;
+  height: 170px;
+}
+
+.more {
+  display: flex;
+  margin-left: 32px;
+}
+.more__text {
+  font-family: "TT Lakes Light";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  margin-top: 0;
+  margin-left: 5px;
+}
+.add-width {
+  height: 245px;
+}
+
+.more__cursor__active {
+  transform: rotateX(180deg);
+}
+@media (max-width: 767px) {
+  .more {
+    display: none;
+  }
+}

@@ -12,7 +12,10 @@
   font-family: "TT Lakes Medium";
   src: url(./fonts/TTLakes-Medium.woff);
 }
-
+body {
+  margin: 0;
+  padding: 0;
+}
 button {
   background-color: transparent;
   border: none;
