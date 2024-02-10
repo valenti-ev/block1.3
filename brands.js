@@ -1,9 +1,10 @@
-const mobile = window.matchMedia("(min-width: 0px) and (max-width: 767px)");
-const pad = window.matchMedia("(min-width: 768px) and (max-width: 1023px)");
-const desktop = window.matchMedia(
-  "(min-width: 1024px) and (max-width: 2560px)",
-);
+const mobile = window.matchMedia("(min-width: 320px) and (max-width: 767px)");
+const desktop = window.matchMedia("(min-width: 768px) and (max-width: 2560px)");
+
 const list = document.querySelector(".swiper-wrapper");
+const button = document.querySelector(".more");
+const text = document.querySelector(".more__button");
+const cursor = document.querySelector(".more__cursor");
 function swiperInit() {
   const swiper = new Swiper(".swiper-container", {
     // Default parameters
@@ -44,7 +45,7 @@ window.addEventListener("load", function () {
     swiperInit();
   }
 
-  if (pad.matches) {
+  if (desktop.matches) {
     list.classList.add("swiper-wrapper");
     const slider = swiperInit();
     slider.destroy();
@@ -55,19 +56,6 @@ window.addEventListener("load", function () {
     list.classList.add("overflow-block");
   } else {
     list.classList.remove("brand-list");
-  }
-
-  if (desktop.matches) {
-    list.classList.add("swiper-wrapper");
-    const slider = swiperInit();
-    slider.destroy();
-    // добавляем гриды
-    list.classList.add("brand-big-list");
-    list.classList.remove("swiper-wrapper");
-    // скрываем часть блока
-    list.classList.add("overflow-block");
-  } else {
-    list.classList.remove("brand-big-list");
     list.classList.remove("overflow-block");
   }
 });
@@ -80,49 +68,29 @@ window.addEventListener("resize", function () {
     swiperInit();
   }
 
-  if (pad.matches) {
+  if (desktop.matches) {
     list.classList.add("swiper-wrapper");
     const slider = swiperInit();
     slider.destroy();
     // добавляем гриды
     list.classList.add("brand-list");
     list.classList.remove("swiper-wrapper");
+    // скрываем часть блока
     list.classList.add("overflow-block");
   } else {
     list.classList.remove("brand-list");
     list.classList.remove("overflow-block");
   }
-
-  if (desktop.matches) {
-    list.classList.add("swiper-wrapper");
-    const slider = swiperInit();
-    slider.destroy();
-    // добавляем гриды
-    list.classList.add("brand-big-list");
-    list.classList.remove("swiper-wrapper");
-    // скрываем часть блока
-    list.classList.add("overflow-block");
-  } else {
-    list.classList.remove("brand-big-list");
-    // list.classList.remove("overflow-block");
-  }
 });
 
-const button = document.querySelector(".more");
-const text = document.querySelector(".more__text");
-const cursor = document.querySelector(".more__cursor");
-console.log("button", button);
 button.addEventListener("click", function () {
-  console.log("click");
-
-  console.log("more-text", text);
   if (list.classList.contains("add-width")) {
     list.classList.remove("add-width");
-    text.innerHTML = "<p class='more__text'>Показать все</p>";
+    text.innerHTML = "<p class='more__button'>Показать все</p>";
     cursor.classList.remove("more__cursor__active");
   } else {
     list.classList.add("add-width");
-    text.innerHTML = "<p class='more__text'>Скрыть</p>";
+    text.innerHTML = "<p class='more__button'>Скрыть</p>";
     cursor.classList.add("more__cursor__active");
   }
 });
